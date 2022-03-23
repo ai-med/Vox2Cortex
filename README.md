@@ -1,1 +1,53 @@
-In construction.
+# Vox2Cortex
+
+[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](LICENSE)
+[![Preprint](https://img.shields.io/badge/arXiv-2203.09446-b31b1b)](https://arxiv.org/abs/2203.09446)
+
+This repository implements Vox2Cortex, a fast deep learning-based method for reconstruction of cortical surfaces from MRI.
+
+![Alt Text](https://github.com/ai-med/Vox2Cortex/blob/main/demo/cortex_surfaces.gif)
+
+```
+    Citation will be added soon.
+```
+
+## Installation
+1. Make sure you use python 3.8
+2. Install this (Vox2Cortex) repo using pip
+```
+    git clone https://github.com/ai-med/Vox2Cortex.git
+    cd Vox2Cortex && pip install -e .
+```
+3. Clone and install [this](https://github.com/fabibo3/pytorch3d/tree/vox2cortex_cvpr2022) fork of PyTorch3d analogously, i.e.,
+```
+    git clone https://github.com/fabibo3/pytorch3d.git
+    cd pytorch3d
+    git checkout tags/vox2cortex_cvpr2022 -b vox2cortex_pytorch3d
+    pip install -e .
+```
+
+## Usage
+You can include new cortex datasets directly in `vox2cortex/data/supported_datasets.py` and `vox2cortex/data/dataset_handler.py`. It is generally assumed that the cortex data is stored in the form `data-raw-directory/sample-ID/sample-data`, where `sample-data` includes MRI scans and ground-truth surfaces. See `vox2cortex/scripts/pre_process_oasis.py` for our preprocessing routine.
+
+A training with subsequent model testing can be started with
+```
+    cd vox2cortex/
+    python3 main.py --train --test
+```
+For further information about command-line options see
+```
+    python3 main.py --help
+```
+Model parameters (and also parameters for optimization, testing, tuning, etc.) are set in `vox2cortex/utils/params.py` and overwritten by `vox2cortex/main.py`.
+
+In order to evaluate predicted meshes created with `--test`, please refer to `vox2cortex/scripts/eval_meshes.py`.
+
+For mesh template creation, you can use `vox2cortex/scripts/create_template_and_store.py`. Note that we used an extensively smoothed FreeSurfer mesh as starting template. The simplest workflow is probably to create an individual dataset containing the smoothed surfaces as ground truth meshes.
+
+## Coordinate convention
+We assume that the meshes are stored in world coordinates, i.e., they can be transformed via the inverse nifty header to the mri voxel space.
+
+## Normal convention
+The normal convention follows the convention used in most libraries like
+pytorch3d or trimesh. That is, the face indices are ordered such that the face
+normal of a face with vertex indices (i, j, k) calculates as (vj - vi) x (vk - vi).
