@@ -7,6 +7,7 @@ This repository implements *Vox2Cortex* (preprint is [here](https://arxiv.org/ab
 
 ![Alt Text](https://github.com/ai-med/Vox2Cortex/blob/main/demo/cortex_surfaces.gif)
 
+To appear in:
 ```
 @InProceedings{Bongratz_2022_CVPR,
     author    = {Bongratz, Fabian and Rickmann, Anne-Marie and P{\"{o}}lsterl, Sebastian and Wachinger, Christian},
@@ -49,7 +50,7 @@ Model parameters (and also parameters for optimization, testing, tuning, etc.) a
 
 In order to evaluate predicted meshes created with `--test`, please refer to `vox2cortex/scripts/eval_meshes.py`.
 
-For mesh template creation, you can use `vox2cortex/scripts/create_template_and_store.py`. Note that we used an extensively smoothed FreeSurfer mesh as starting template. The simplest workflow is probably to create an individual dataset containing the smoothed surfaces as ground truth meshes.
+We provide an exemplary template with 42016 vertices per surface in `supplementary_material/templates/`. Note that this template is stored in a normalized format and is only applicable to images of size 182x218x182 (this is unfortunately not very convenient and we plan to change it in a future version). If you want to create your own template, you can use `vox2cortex/scripts/create_template_and_store.py`. Note that we used an extensively smoothed FreeSurfer mesh as starting template. The simplest workflow is probably to create an individual dataset containing the smoothed surfaces as ground truth meshes.
 
 ## Coordinate convention
 We assume that the meshes are stored in world coordinates, i.e., they can be transformed via the inverse nifty header to the mri voxel space.
