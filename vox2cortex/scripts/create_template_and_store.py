@@ -40,7 +40,7 @@ print("Dataset created.")
 print("Creating template...")
 
 # Choose here the function that creates the desired template
-path = dataset.store_index0_template(template_path, level=6)
+path = dataset.store_index0_template(template_path, n_max_points=45000)
 
 if path is not None:
     print("Template stored at " + path)
