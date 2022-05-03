@@ -516,7 +516,9 @@ def training_routine(hps: dict, experiment_name=None, loglevel='INFO',
         # Load state and epoch
         model_path = os.path.join(experiment_dir, "intermediate.model")
         trainLogger.info("Loading model %s...", model_path)
-        model.load_state_dict(torch.load(model_path))
+        # Initially map to cpu to avoid issues when resuming a training on
+        # different cuda device
+        model.load_state_dict(torch.load(model_path, map_location='cpu'))
         epochs_file = os.path.join(experiment_dir, "models_to_epochs.json")
         with open(epochs_file, 'r') as f:
             models_to_epochs = json.load(f)
