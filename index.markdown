@@ -1,5 +1,5 @@
 ---
-permalink: /vox2cortex/
+
 title: "Vox2Cortex"
 
 ---
