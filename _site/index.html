@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://localhost:4000/">
+
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+
+    <body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#paper">About</a>
+                    </li>
+		    <li>
+                        <a class="page-scroll" href=https://github.com/ai-med/Vox2Cortex>Code</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Vox2Cortex</div>
+                <div class="intro-heading">Generating brain surfaces within seconds</div>
+            </div>
+        </div>
+    </header>
+<!--
+        
+          
+        
+          
+        
+          
+        
+ -->
+
+
+    <!-- Paper Section -->
+    <section id="paper">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Vox2Cortex</h2>
+                    <h3 class="section-subheading text-muted">The reconstruction of cortical surfaces from brain magnetic resonance imaging (MRI) scans is essential for quantitative analyses of cortical thickness and sulcal morphology. Although traditional and deep learning-based algorithmic pipelines exist for this purpose, they have two major drawbacks: lengthy runtimes of multiple hours (traditional) or intricate post-processing, such as mesh extraction and topology correction (deep learning-based). In this work, we address both of these issues and propose Vox2Cortex, a deep learning-based algorithm that directly yields topologically correct, three-dimensional meshes of the boundaries of the cortex. Vox2Cortex leverages convolutional and graph convolutional neural networks to deform an initial template to the densely folded geometry of the cortex represented by an input MRI scan. We show in extensive experiments on three brain MRI datasets that our meshes are as accurate as the ones reconstructed by state-of-the-art methods in the field, without the need for time- and resource-intensive post-processing. To accurately reconstruct the tightly folded cortex, we work with meshes containing about 168,000 vertices at test time, scaling deep explicit reconstruction methods to a new level.</h3>
+                </div>
+	</div>
+            
+		<div class="row">
+			<img class="center-block" src="img/cortex_surfaces.gif" class="img-responsive" alt="">
+		</div>
+		<div class="row text-center text-center">
+		        <div class="col-md-4">
+			<a href="https://arxiv.org/abs/2203.09446">                  
+		            <span class="fa-stack fa-4x">
+		                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+		                <i class="fa fa-book  fa-stack-1x fa-inverse"></i>
+		            </span>
+		            <h4 class="service-heading">Paper</h4>
+		            <p class="text-muted"></p>
+			</a>
+		        </div>
+		        <div class="col-md-4 text-center">
+			<a href="_data/cvpr22_poster_template.pdf"> 
+		            <span class="fa-stack fa-4x">
+		                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+		                <i class="fa fa-picture-o  fa-stack-1x fa-inverse"></i>
+		            </span>
+		            <h4 class="service-heading">Poster</h4>
+		            <p class="text-muted"></p>
+			</a>
+		        </div>
+		        <div class="col-md-4 text-center">
+			<a href="_data/slides.pdf">
+		            <span class="fa-stack fa-4x">
+		                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+		                <i class="fa fa-slideshare fa-stack-1x fa-inverse"></i>
+		            </span>
+		            <h4 class="service-heading">Slides</h4>
+		            <p class="text-muted"></p>
+			</a>
+		        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row text-center">
+            <div class="col">
+	            <p class="text-primary">Watch our presentation at CVPR 2022 here:</p>
+		    <iframe width="560" height="315" src="https://www.youtube.com/embed/WeBZeLqSgsM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 			clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+		    </iframe>
+	    </div>
+	 
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Authors</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row text-center text-center">
+                
+                <div class="col-sm-3 ">
+                    <div class="team-member text-nowrap">
+                       <img src="img/team/1.png" class="img-responsive img-circle" alt="">
+                        <h5>Fabian Bongratz</h5>
+			
+			    <p class="text-muted">fabi.bongratz@tum.de</p>
+			
+                        <p class="text-muted">PhD student</p>
+			
+                        <ul class="list-inline social-buttons">
+                            
+                            <li>
+                                <a href="https://github.com/fabibo3">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3 ">
+                    <div class="team-member text-nowrap">
+                       <img src="img/team/2.png" class="img-responsive img-circle" alt="">
+                        <h5>Anne-Marie Rickmann</h5>
+			
+			    <p class="text-muted">a.rickmann@tum.de</p>
+			
+                        <p class="text-muted">PhD student</p>
+			
+                        <ul class="list-inline social-buttons">
+                            
+                            <li>
+                                <a href="https://github.com/arickm">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3 ">
+                    <div class="team-member text-nowrap">
+                       <img src="img/team/3.png" class="img-responsive img-circle" alt="">
+                        <h5>Sebastian Pölsterl</h5>
+			
+			    <br class="line-break">
+			
+                        <p class="text-muted">PostDoc</p>
+			
+                        <ul class="list-inline social-buttons">
+                            
+                            <li>
+                                <a href="https://github.com/sebp">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3 ">
+                    <div class="team-member text-nowrap">
+                       <img src="img/team/4.png" class="img-responsive img-circle" alt="">
+                        <h5>Christian Wachinger</h5>
+			
+			    <br class="line-break">
+			
+                        <p class="text-muted">Professor</p>
+			
+                        <ul class="list-inline social-buttons">
+                            
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://twitter.com/wonnga">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row text-center">
+                <div class="group text-nowrap">
+                    <img src="img/group/group.png" class="img-responsive img-circle center-block" alt="">
+                        <h5>AI-Med</h5>
+
+                        <p class="text-muted">Lab for AI in Medical Imaging</p>
+			
+                        <ul class="list-inline social-buttons">
+                            
+                            <li>
+                                <a href="https://github.com/ai-med">
+                                    <i class="fa fa-github"></i> 
+                                </a>
+                            </li>
+		            
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCE-Gvz7ffnuaTWLzhz1gm-w/featured">
+                                    <i class="fa fa-youtube"></i> 
+                                </a>
+                            </li>
+		            
+                            <li>
+                                <a href="https://twitter.com/AI_Medic">
+                                    <i class="fa fa-twitter"></i> 
+                                </a>
+                            </li>
+		            
+
+		</div>
+            </div>
+        </div>
+    </section>
+
+      <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-nowrap">
+                    <span class="copyright">Copyright &copy; Fabian Bongratz & Anne-Marie Rickmann 2022</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+     <!-- Portfolio Modals -->
+ 
+    <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Poster</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/dreams.png" class="img-responsive img-centered" alt="image-alt">
+                            <p></p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com"></a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com"></a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com"></a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    <script src="/js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/agency.js"></script>
+
+
+    </body>
+</html>

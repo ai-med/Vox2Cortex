@@ -1,0 +1,56 @@
+<!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Authors</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row text-center text-center">
+                {% for member in site.people %}
+                <div class="col-sm-3 ">
+                    <div class="team-member text-nowrap">
+                       <img src="img/team/{{ member.pic }}.png" class="img-responsive img-circle" alt="">
+                        <h5>{{ member.name }}</h5>
+			{% if member.email == null or member.email == ""%}
+			    <br class="line-break">
+			{% else %}
+			    <p class="text-muted">{{ member.email }}</p>
+			{% endif %}
+                        <p class="text-muted">{{ member.position }}</p>
+			
+                        <ul class="list-inline social-buttons">
+                            {% for network in member.social %}
+                            <li>
+                                <a href="{{ network.url }}">
+                                    <i class="fa fa-{{ network.title }}"></i>
+                                </a>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row text-center">
+                <div class="group text-nowrap">
+                    <img src="img/group/group.png" class="img-responsive img-circle center-block" alt="">
+                        <h5>{{ site.group }}</h5>
+
+                        <p class="text-muted">{{ site.group_long }}</p>
+			
+                        <ul class="list-inline social-buttons">
+                            {% for network in site.group_social %}
+                            <li>
+                                <a href="{{ network.url }}">
+                                    <i class="fa fa-{{ network.title }}"></i> 
+                                </a>
+                            </li>
+		            {% endfor %}
+
+		</div>
+            </div>
+        </div>
+    </section>

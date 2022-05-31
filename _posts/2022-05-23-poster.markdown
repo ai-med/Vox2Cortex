@@ -1,0 +1,10 @@
+---
+title: Poster
+subtitle: CVPR 2022
+layout: default
+img: dreams.png
+thumbnail: poster_thumbnail.jpg
+alt: image-alt
+
+---
+
