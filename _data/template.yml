@@ -4,8 +4,11 @@ color:
   secondary: 303acf   
   secondary-dark: 333
   muted: 777
+  highlight: 0065BD
 
 # Font Families
+# primary: 'Montserrat, "Helvetica Neue",Helvetica,Arial,sans-serif'
+#  secondary: '"Helvetica Neue", "Helvetica Neue", Helvetica,Arial,sans-serif'
 font:
-  primary: 'Montserrat, "Helvetica Neue",Helvetica,Arial,sans-serif'
-  secondary: '"Helvetica Neue", "Helvetica Neue", Helvetica,Arial,sans-serif'
+  primary: 'Arial'
+  secondary: 'Arial'

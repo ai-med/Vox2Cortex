@@ -3,14 +3,40 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Vox2Cortex</h2>
-                    <h3 class="section-subheading text-muted">The reconstruction of cortical surfaces from brain magnetic resonance imaging (MRI) scans is essential for quantitative analyses of cortical thickness and sulcal morphology. Although traditional and deep learning-based algorithmic pipelines exist for this purpose, they have two major drawbacks: lengthy runtimes of multiple hours (traditional) or intricate post-processing, such as mesh extraction and topology correction (deep learning-based). In this work, we address both of these issues and propose Vox2Cortex, a deep learning-based algorithm that directly yields topologically correct, three-dimensional meshes of the boundaries of the cortex. Vox2Cortex leverages convolutional and graph convolutional neural networks to deform an initial template to the densely folded geometry of the cortex represented by an input MRI scan. We show in extensive experiments on three brain MRI datasets that our meshes are as accurate as the ones reconstructed by state-of-the-art methods in the field, without the need for time- and resource-intensive post-processing. To accurately reconstruct the tightly folded cortex, we work with meshes containing about 168,000 vertices at test time, scaling deep explicit reconstruction methods to a new level.</h3>
+                    <h2 class="section-heading"> Vox2Cortex: Fast Explicit Reconstruction of Cortical Surfaces from
+3D MRI Scans with Geometric Deep Neural Networks </h2>
+                    <p class='standard'>
+			Vox2Cortex <mark class="blue"> deforms </mark> a brain <mark class="blue">template </mark> to the inner and outer 				boundary surfaces of the cortex based on features extracted from the input MRI.
+		    </p>
                 </div>
-	</div>
-            
+	     </div>
+            <div class="row paper">
+			<img class="center-block" src="img/architecture_overview.png" class="img-responsive" alt="">
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-12 text-center">
+                    <p class='standard'>
+			The obtained surfaces are <mark class="blue"> geometrically </mark> accurate and <mark class="blue"> topologically </mark> correct.
+		    </p>
+                </div>
+	     </div>
 		<div class="row">
 			<img class="center-block" src="img/cortex_surfaces.gif" class="img-responsive" alt="">
 		</div>
+		<div class="row text-center">
+                <div class="col-lg-12 text-center">
+                    <p class='standard'>
+			The novel  <mark class="blue"> curvature-weighted </mark> Chamfer Loss reweights the ratio between geometric  <mark class="blue"> accuracy </mark> and surface <mark class="blue"> regularity</mark> locally based on ground truth curvature
+		    </p>
+                </div>
+	     </div>
+	     <div class="row text-center">
+                <div class="col-lg-12 text-center">
+                    <p class='standard'>
+			See the paper and our CVPR 2022 poster and presentation slides here:
+		    </p>
+                </div>
+	     </div>
 		<div class="row text-center text-center">
 		        <div class="col-md-4">
 			<a href="https://arxiv.org/abs/2203.09446">                  
@@ -23,7 +49,7 @@
 			</a>
 		        </div>
 		        <div class="col-md-4 text-center">
-			<a href="_data/cvpr22_poster_template.pdf"> 
+			<a href="files/vox2cortex_poster.pdf"> 
 		            <span class="fa-stack fa-4x">
 		                <i class="fa fa-circle fa-stack-2x text-primary"></i>
 		                <i class="fa fa-picture-o  fa-stack-1x fa-inverse"></i>
@@ -33,7 +59,7 @@
 			</a>
 		        </div>
 		        <div class="col-md-4 text-center">
-			<a href="_data/slides.pdf">
+			<a href="files/Vox2Cortex-CVPR2022.pdf">
 		            <span class="fa-stack fa-4x">
 		                <i class="fa fa-circle fa-stack-2x text-primary"></i>
 		                <i class="fa fa-slideshare fa-stack-1x fa-inverse"></i>
