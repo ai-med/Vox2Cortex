@@ -14,49 +14,39 @@ people:
   position: PhD student
   email: fabi.bongratz@tum.de
   social:
-    - title: github
-      url: https://github.com/fabibo3
-    - title: linkedin
-      url: #
+
 - name: Anne-Marie Rickmann
   pic: 2
   position: PhD student
   email: a.rickmann@tum.de
   social:
-    - title: github
-      url: https://github.com/arickm
-    - title: linkedin
-      url: #
+
 - name: Sebastian Pölsterl
   pic: 3
   position: PostDoc
   email:  
   social:
-    - title: github
-      url: https://github.com/sebp
-    - title: linkedin
-      url: #
+
 - name: Christian Wachinger
   pic: 4
   position: Professor
   email:
   social:
-    - title: linkedin
-      url: #
-    - title: twitter
-      url: https://twitter.com/wonnga
 
 
 
 group: AI-Med
 group_long: Lab for AI in Medical Imaging
 group_social:
+  - title: home
+    url: http://ai-med.de/index.php
   - title: github
     url:  https://github.com/ai-med
   - title: youtube
     url: https://www.youtube.com/channel/UCE-Gvz7ffnuaTWLzhz1gm-w/featured
   - title: twitter
     url: https://twitter.com/AI_Medic
+
 
 
 # Postal
