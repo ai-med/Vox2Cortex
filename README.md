@@ -7,15 +7,15 @@ This repository implements *Vox2Cortex* (preprint is [here](https://arxiv.org/ab
 
 ![Alt Text](https://github.com/ai-med/Vox2Cortex/blob/main/demo/cortex_surfaces.gif)
 
-To appear in:
+If you find this work useful, please cite:
 ```
 @InProceedings{Bongratz_2022_CVPR,
-    author    = {Bongratz, Fabian and Rickmann, Anne-Marie and P{\"{o}}lsterl, Sebastian and Wachinger, Christian},
-    title     = {Vox2Cortex: Fast Explicit Reconstruction of Cortical Surfaces from 3D MRI Scans with Geometric Deep Neural Networks},
+    author    = {Bongratz, Fabian and Rickmann, Anne-Marie and P\"olsterl, Sebastian and Wachinger, Christian},
+    title     = {Vox2Cortex: Fast Explicit Reconstruction of Cortical Surfaces From 3D MRI Scans With Geometric Deep Neural Networks},
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
     month     = {June},
     year      = {2022},
-    pages     = {}
+    pages     = {20773-20783}
 }
 ```
 
