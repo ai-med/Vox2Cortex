@@ -46,12 +46,12 @@ hyper_ps_default={
     # Therefore, it is recommended to use lists for parameters here.
 
     # The path where templates are stored
-    'TEMPLATE_PATH': "../supplementary_material/white_pial/",
+    'TEMPLATE_PATH': "../supplementary_material/templates/",
 
     # The template name in dependence of the number of vertices N,
     # 'SELECT_PATH_SIZE' (sps) and 'PATCH_SIZE' (ps)
     'TEMPLATE_NAME': (
-        lambda N, sps, ps: f"cortex_4_1000_3_smoothed_{N}_sps{sps}_ps{ps}.obj"
+        lambda N, sps, ps: f"cortex_4_smoothed_{N}_sps{sps}_ps{ps}.obj"
     ),
 
     # The number of vertex classes to distinguish (including background)
