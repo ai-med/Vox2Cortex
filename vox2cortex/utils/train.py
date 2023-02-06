@@ -127,10 +127,6 @@ class Solver():
                  for lf in self.mesh_loss_func]):
             assert len(mesh_loss_func) + 1 == len(mesh_loss_func_weights),\
                     "Number of weights must be equal to number of mesh losses."
-        elif any([isinstance(lf, ChamferAndNormalsAndCurvatureLoss)
-                 for lf in self.mesh_loss_func]):
-            assert len(mesh_loss_func) + 2 == len(mesh_loss_func_weights),\
-                    "Number of weights must be equal to number of mesh losses."
         else:
             assert len(mesh_loss_func) == len(mesh_loss_func_weights),\
                     "Number of weights must be equal to number of mesh losses."
