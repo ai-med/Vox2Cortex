@@ -54,7 +54,7 @@ hyper_ps_default={
         lambda N, sps, ps: f"cortex_4_smoothed_{N}_sps{sps}_ps{ps}.obj"
     ),
 
-    # The number of vertex classes to distinguish (including background)
+    # The number of voxel classes to distinguish (including background)
     'N_V_CLASSES': 2,
 
     # The wandb project name
