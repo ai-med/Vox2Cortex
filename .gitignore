@@ -1,7 +1,8 @@
 *.swp
 __pycache__/
-experiments/
 meshes/
+experiments/*
+!experiments/public_model/
 misc/
 to_check/
 tmp/
