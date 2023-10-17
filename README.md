@@ -42,6 +42,13 @@ A training with subsequent model testing can be started with
     cd vox2cortex/
     python3 main.py --train --test
 ```
+
+***Update***
+To perform inference with the public model (same configuration as in the CVPR paper, i.e., trained with reduced image resolution and ~42,000 vertices, but more epochs), use
+```
+    cd vox2cortex/
+    python3 main.py --test -n public_model --dataset <Dataset ID> --n_test_vertices [42016|168058]
+```
 For further information about command-line options see
 ```
     python3 main.py --help
