@@ -16,7 +16,7 @@ This repository implements several mesh-based segmentation methods for the corte
 
 ## Installation
 1. Make sure you use python 3.9
-2. Clone this (vox2organ) repo
+2. Clone this (Vox2Cortex) repo
 ```
     git clone git@github.com:ai-med/Vox2Cortex.git
     cd Vox2Cortex/
@@ -29,7 +29,7 @@ This repository implements several mesh-based segmentation methods for the corte
 4. Clone and install our [pytorch3d fork](https://github.com/fabibo3/pytorch3d) as described therein (basically running `pip install -e .` in the cloned pytorch3d repo).
 
 ## Usage
-You can include new datasets directly in `vox2organ.data.supported_datasets`. It is generally assumed that subject data (comprising image, meshes, and segmentation maps) is stored in the form `data-raw-directory/sample-ID/subject-data`. Currently, it is required that the mapping from world to image space is equal for all images, which can be achieved by affine registration of all input images to a common template via [niftyreg](http://cmictig.cs.ucl.ac.uk/wiki/index.php/NiftyReg) and applying the computed affine transformation to the respective meshes. See the `preprocessing/` directory for preprocessing scripts.
+You can include new datasets directly in `vox2organ/data/supported_datasets.py`. It is generally assumed that subject data (comprising image, meshes, and segmentation maps) is stored in the form `data-raw-directory/sample-ID/subject-data`. Currently, it is required that the mapping from world to image space is equal for all images, which can be achieved by affine registration of all input images to a common template, e.g., with [niftyreg](http://cmictig.cs.ucl.ac.uk/wiki/index.php/NiftyReg), and applying the computed affine transformation to the respective meshes. See the `preprocessing/` directory for preprocessing scripts.
 
 ### Inference
 We provide a pre-trained V2C-Flow-S model in `vox2organ/pretrained_models/V2C-Flow-S-ADNI`. For inference with this model, we recommend copying it to an experiment dir first.
