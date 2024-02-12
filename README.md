@@ -2,7 +2,7 @@
 
 *Note*: This repository has been refactored entirely, you can find the old Vox2Cortex repo [here](https://github.com/ai-med/Vox2Cortex/releases/tag/v0.1.0).
 
-This repository implements several mesh-based segmentation methods for the cortex abdominal organs, namely:
+This repository implements several mesh-based segmentation methods for the cortex and abdominal organs, namely:
 - [Vox2Cortex](https://arxiv.org/abs/2203.09446)
 - [V2C-Flow](https://arxiv.org/abs/2401.12938)
 - [UNetFlow](https://arxiv.org/abs/2306.15515)
