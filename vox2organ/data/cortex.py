@@ -52,8 +52,6 @@ class CortexDataset(ImageAndMeshDataset):
     image_file_name = "mri.nii.gz"
     seg_file_name = "aseg.nii.gz" # For FS segmentations
 
-    reduced_gt = False
-
     LabelMap = CortexLabels
 
     def _get_seg_and_mesh_label_names(self, structure_type):
@@ -113,7 +111,7 @@ class CortexDataset(ImageAndMeshDataset):
         if self.reduced_gt:
             log.info('Using reduced FS labels!')
             for k, v in mesh_label_names.items():
-                v = v + "_reduced_0.3"
+                mesh_label_names[k] = v + "_reduced_0.3"
 
         return seg_label_names, mesh_label_names
 
@@ -123,7 +121,7 @@ class CortexDataset(ImageAndMeshDataset):
         **kwargs
     ):
 
-        self.reduced_gt = kwargs.get('reduced_gt', self.__class__.reduced_gt)
+        self.reduced_gt = kwargs.get('reduced_gt', False)
 
         # Map structure type to (file-)names
         (self.voxel_label_names,
