@@ -1,6 +1,7 @@
 # Vox2Cortex and related methods
 
-*Note*: This repository has been refactored entirely, you can find the old Vox2Cortex repo [here](https://github.com/ai-med/Vox2Cortex/releases/tag/v0.1.0).
+*Note*: This repository has been refactored entirely, you can find the old Vox2Cortex repo [here](https://github.com/ai-med/Vox2Cortex/releases/tag/v0.1.0).  
+*Note*: For an implementation of V2C-Long, see [this](https://github.com/ai-med/V2C-Long) repo.
 
 This repository implements several mesh-based segmentation methods for the cortex and abdominal organs, namely:
 - [Vox2Cortex](https://arxiv.org/abs/2203.09446)
