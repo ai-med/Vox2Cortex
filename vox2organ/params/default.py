@@ -202,6 +202,9 @@ hyper_ps_default = {
     # only affects training shapes in the cortex.
     'REDUCED_GT': True,
 
+    # Whether to use registered/resampled meshes as ground truth (V2CC)
+    'REGISTERED_GT_MESHES': False,
+
     # The number of points sampled per mesh
     'N_REF_POINTS_PER_STRUCTURE': 100000,
 

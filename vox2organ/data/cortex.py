@@ -42,13 +42,16 @@ class CortexDataset(ImageAndMeshDataset):
 
     :param structure_type: Either 'cerebral_cortex' (outer cortex surfaces)
     or 'white_matter' (inner cortex surfaces) or both
-    :param reduced_freesurfer: The factor of reduced freesurfer meshes, e.g.,
+    :param reduced_gt: The factor of reduced freesurfer meshes, e.g.,
     0.3
+    :param registered_gt_meshes: Whether the ground truth meshes are 
+    registered to a common template
     :param morph_data_dir: A directory containing morphological brain data,
     e.g. thickness values.
     :param kwargs: Parameters for ImageAndMeshDataset
     """
 
+    # image_file_name = "mri_mni152.nii.gz"
     image_file_name = "mri.nii.gz"
     seg_file_name = "aseg.nii.gz" # For FS segmentations
 
@@ -108,10 +111,21 @@ class CortexDataset(ImageAndMeshDataset):
         else:
             raise ValueError("Unknown structure type.")
 
-        if self.reduced_gt:
-            log.info('Using reduced FS labels!')
+        if self.reduced_gt and not self.registered_gt_meshes:
+            log.info('Using reduced_0.3 labels.')
             for k, v in mesh_label_names.items():
                 mesh_label_names[k] = v + "_reduced_0.3"
+        elif self.reduced_gt and self.registered_gt_meshes:
+            log.info('Using resampled ico6 labels.')
+            for k, v in mesh_label_names.items():
+                mesh_label_names[k] = v + "_resampled_ico6"
+        elif not self.reduced_gt and self.registered_gt_meshes:
+            log.info('Using resampled ico7 labels.')
+            for k, v in mesh_label_names.items():
+                mesh_label_names[k] = v + "_resampled_ico7"
+        else:
+            log.info('Using standard FS labels.')
+            pass
 
         return seg_label_names, mesh_label_names
 
@@ -122,6 +136,7 @@ class CortexDataset(ImageAndMeshDataset):
     ):
 
         self.reduced_gt = kwargs.get('reduced_gt', False)
+        self.registered_gt_meshes = kwargs.get('registered_gt_meshes', False)
 
         # Map structure type to (file-)names
         (self.voxel_label_names,

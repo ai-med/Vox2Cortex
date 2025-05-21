@@ -408,8 +408,11 @@ class ImageAndMeshDataset(DatasetHandler, ABC):
         else:
             train_dataset = None
 
+        # For evaluation, the original FS outputs should be used
         if 'reduced_gt' in kwargs:
             kwargs.pop('reduced_gt')
+        if 'registered_gt_meshes' in kwargs:
+            kwargs.pop('registered_gt_meshes')
 
         if "validation" in load_only:
             val_dataset = cls(
@@ -695,6 +698,11 @@ class ImageAndMeshDataset(DatasetHandler, ABC):
 
         points, normals, curvs = [], [], []
 
+        if self.registered_gt_meshes:
+            log.info("Using vertices from registered meshes as reference points.")
+        else:
+            log.info("Sampling reference points from mesh.")
+
         # Iterate over mesh labels
         for i, m in tqdm(
             enumerate(self.mesh_labels),
@@ -708,12 +716,19 @@ class ImageAndMeshDataset(DatasetHandler, ABC):
                 for v, f in zip(m.verts_list(), m.faces_list())
             ]
             m_new = Meshes(m.verts_list(), m.faces_list(), verts_features=curv_list)
-            p, n, c = sample_points_from_meshes(
-                m_new,
-                self.n_ref_points_per_structure,
-                return_normals=True,
-                interpolate_features="barycentric",
-            )
+            if self.registered_gt_meshes:
+                # Use vertices as points
+                p = m_new.verts_padded()
+                n = m_new.verts_normals_padded()
+                c = m_new.verts_features_padded()
+            else:
+                # Sample points from mesh
+                p, n, c = sample_points_from_meshes(
+                    m_new,
+                    self.n_ref_points_per_structure,
+                    return_normals=True,
+                    interpolate_features="barycentric",
+                )
 
             points.append(p)
             normals.append(n)

@@ -25,13 +25,14 @@ hyper_ps_groups = {
     },
 
 
-    # Vox2Cortex
+    ### Vox2Cortex ###
     'Vox2Cortex': {
         'BASE_GROUP': None,
         'BATCH_SIZE': 1,
     },
 
-    # V2C-Flow
+
+    ### V2C-Flow ###
     'V2C-Flow-S': {
         'BASE_GROUP': 'Vox2Cortex',
         'BATCH_SIZE': 1,
@@ -86,6 +87,23 @@ hyper_ps_groups = {
     'V2C-Flow-F': {
         'BASE_GROUP': 'V2C-Flow-S',
         'MESH_TEMPLATE_ID': 'fsaverage-no-parc',
+    },
+
+
+    ### V2CC ###
+    'V2CC': {
+        'BASE_GROUP': 'Vox2Cortex',
+        'MESH_LOSS_FUNC': [
+            L1MeshLoss(curv_weight_max=1.0),
+            NormalConsistencyLoss()
+        ],
+        'MESH_LOSS_FUNC_WEIGHTS': [
+            [1.0] * 4,  # V2CC
+            [0.003] * 2 + [0.007] * 2  # NC for white, pial
+        ],
+        'REGISTERED_GT_MESHES': True, # Only affects training meshes!
+        'REDUCED_GT': False,
+        'MESH_TEMPLATE_ID': "fsaverage-smooth-no-parc",
     },
 
 

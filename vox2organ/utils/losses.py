@@ -21,6 +21,7 @@ from collections.abc import Sequence
 import torch
 import torch.nn.functional as F
 import pytorch3d.structures
+from torch.nn import L1Loss
 from pytorch3d.structures import Meshes, MeshesXD, Pointclouds
 from pytorch3d.loss import (
     chamfer_distance,
@@ -113,6 +114,52 @@ class MeshLoss(ABC):
                                tuple,
                                list]):
         raise NotImplementedError()
+
+
+class L1MeshLoss(MeshLoss):
+    """ L1 distance between the predicted mesh and a reference mesh.
+        both meshes need to have the same amount of vertices and should be registered
+    """
+
+    def __init__(self, curv_weight_max=None):
+        super().__init__()
+        self.curv_weight_max = curv_weight_max
+        self.l1loss = L1Loss(reduction='none')
+
+    def __str__(self):
+        return f"L1Loss"
+
+    def get_loss(self, pred_meshes, target):
+        if isinstance(target, pytorch3d.structures.Pointclouds):
+            n_points = torch.min(target.num_points_per_cloud())
+            target_ = target
+            if self.curv_weight_max is not None:
+                raise RuntimeError("Can only apply curvature weights if they"
+                                   " are provided in the target.")
+
+        if isinstance(target, pytorch3d.structures.Meshes):
+            n_points = torch.min(target.num_verts_per_mesh())
+            # TODO: how to get vertices?
+            target_ = target.verts_padded()
+            if self.curv_weight_max is not None:
+                raise RuntimeError("Cannot apply curvature weights for"
+                                   " targets of type 'Meshes'.")
+
+        if isinstance(target, Sequence):
+            # target = (verts, normals, curvatures)
+            target_ = target[0] # Only vertices relevant
+            assert target_.ndim == 3 # padded
+            n_points = target_.shape[1]
+            target_curvs = target[2]
+            point_weights = point_weigths_from_curvature(
+                target_curvs, target_, self.curv_weight_max
+            ) if self.curv_weight_max else None
+
+        #pred_points = sample_points_from_meshes(pred_meshes, n_points)
+        pred_points = pred_meshes.verts_padded()
+
+        distance = self.l1loss(pred_points, target_) * point_weights
+        return distance.sum(2).mean()
 
 
 class ChamferLoss(MeshLoss):
