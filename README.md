@@ -6,6 +6,7 @@
 This repository implements several mesh-based segmentation methods for the cortex and abdominal organs, namely:
 - [Vox2Cortex](https://arxiv.org/abs/2203.09446)
 - [V2C-Flow](https://arxiv.org/abs/2401.12938)
+- [V2CC](https://link.springer.com/chapter/10.1007/978-3-031-43993-3_31)
 - [UNetFlow](https://arxiv.org/abs/2306.15515)
 
 <p float="left">
@@ -112,6 +113,18 @@ If you find this work useful, please cite (depending on the used model):
 	author = {Fabian Bongratz and Anne-Marie Rickmann and Christian Wachinger},
 	title = {Abdominal organ segmentation via deep diffeomorphic mesh deformations},
 	journal = {Scientific Reports}
+}
+@inbook{Rickmann2023V2CC,
+	title = {Vertex Correspondence in Cortical Surface Reconstruction},
+	ISBN = {9783031439933},
+	ISSN = {1611-3349},
+	url = {http://dx.doi.org/10.1007/978-3-031-43993-3_31},
+	DOI = {10.1007/978-3-031-43993-3_31},
+	booktitle = {Medical Image Computing and Computer Assisted Intervention – MICCAI 2023},
+	publisher = {Springer Nature Switzerland},
+	author = {Rickmann,  Anne-Marie and Bongratz,  Fabian and Wachinger,  Christian},
+	year = {2023},
+	pages = {318–327}
 }
 @article{Bongratz2024V2CFlow,
 	title = {Neural deformation fields for template-based reconstruction of cortical surfaces from MRI},
